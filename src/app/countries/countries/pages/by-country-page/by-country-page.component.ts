@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Country } from 'src/app/countries/interfaces/country';
+import { Country } from 'src/app/countries/interfaces/countries.interface';
 import { CountriesService } from 'src/app/countries/services/countries.service';
 
 @Component({
