@@ -18,8 +18,6 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
     RouterModule
   ],
   exports: [
-    HomePageComponent,
-    AboutPageComponent,
     SidebarComponent
   ]
 })
