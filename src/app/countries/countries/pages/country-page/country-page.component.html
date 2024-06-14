@@ -1,1 +1,58 @@
-<p>country-page works!</p>
+<ng-template #loading>
+  <div class="alert alert-info">
+    <p>waiting for data...</p>
+  </div>
+</ng-template>
+
+<div *ngIf="country; else loading">
+  <br /><br />
+  <div class="row mt-6">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          Country Details for {{ country.name.common }}
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-4">
+              <p>Capital: {{ country.capital }}</p>
+              <p>Area: {{ country.area }} km²</p>
+              <p>Population: {{ country.population }}</p>
+              <p>Region: {{ country.region }}</p>
+              <p>Subregion: {{ country.subregion }}</p>
+            </div>
+            <div class="col-4">
+              <p>Timezones: {{ country.timezones }}</p>
+              <div class="flex flex-wrap">
+                <p>translations:</p>
+                <span class="badge bg-primary m-1">{{
+                  country.translations["ara"].common
+                }}</span>
+                <span class="badge bg-primary m-1">{{
+                  country.translations["bre"].common
+                }}</span>
+                <span class="badge bg-primary m-1">{{
+                  country.translations["ces"].common
+                }}</span>
+                <span class="badge bg-primary m-1">{{
+                  country.translations["jpn"].common
+                }}</span>
+                <span class="badge bg-primary m-1">{{
+                  country.translations["zho"].common
+                }}</span>
+              </div>
+            </div>
+            <div class="col-4 text-center">
+              <img
+                [src]="country.flags.svg"
+                [ngStyle]="{ width: '200px' }"
+                alt="{{ country.name.common }} Flag"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
