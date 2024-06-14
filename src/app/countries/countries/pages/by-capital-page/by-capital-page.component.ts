@@ -10,7 +10,6 @@ export class ByCapitalPageComponent implements OnInit {
   constructor(private countriesService: CountriesService) {}
   public countries: Country[] = [];
   public isLoading: boolean = false;
-
   public initialTerm: string = '';
 
   ngOnInit(): void {
