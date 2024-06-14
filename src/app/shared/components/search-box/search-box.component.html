@@ -1,0 +1,9 @@
+<div class="col">
+  <input
+    type="text"
+    class="form-control"
+    [placeholder]="placeholder"
+    (keyup.enter)="emitSearch(txtInput.value)"
+    #txtInput
+  />
+</div>
