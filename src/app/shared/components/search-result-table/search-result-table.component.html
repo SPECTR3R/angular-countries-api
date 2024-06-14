@@ -1,18 +1,33 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>Country</th>
-      <th>Capital</th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- <tr *ngFor="let country of countries">
-      <td>{{ country.name }}</td>
-      <td>{{ country.capital }}</td>
-      <td>
-        <a [routerLink]="['/countries', country.alpha3Code]">Details</a>
-      </td>
-    </tr> -->
-  </tbody>
-</table>
+<div
+  *ngIf="countries.length === 0; else table"
+  class="alert alert-warning text-center mt-3"
+>
+  No countries to show
+</div>
+
+<ng-template #table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Capital</th>
+        <th>Flag</th>
+        <th>Population</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countries; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ country.name.common }}</td>
+        <td>{{ country.capital }}</td>
+        <td>{{ country.flag }}</td>
+        <td>{{ country.population | number }}</td>
+        <td>
+          <!-- <a [routerLink]="['/countries', country.alpha3Code]">Details</a> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>

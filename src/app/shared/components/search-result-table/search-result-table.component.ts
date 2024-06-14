@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Country } from 'src/app/countries/interfaces/country';
 
 @Component({
   selector: 'shared-search-result-table',
   templateUrl: './search-result-table.component.html',
-  styleUrls: ['./search-result-table.component.css'],
 })
-export class SearchResultTableComponent {}
+export class SearchResultTableComponent {
+  @Input() countries: Country[] = [];
+}
